@@ -4,7 +4,12 @@ function raffle() {
 
     const putValue = document.querySelector("p")
 
-    const raffleValue = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+    if (minValue < 1 || maxValue > 1000) {
+        alert("message: Invalid number, please try again!")
+    } else {
+        const raffleValue = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 
-    putValue.innerHTML = raffleValue;
+        putValue.innerHTML = raffleValue;
+    }
+
 }
